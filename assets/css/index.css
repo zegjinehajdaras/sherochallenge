@@ -86,41 +86,40 @@ a {
 }
 
 .grid-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  justify-content: center;
 }
-
-.grid-container div {
-  flex: 1 1 calc(20% - 20px);
-  box-sizing: border-box;
-  max-width: calc(20% - 20px);
-}
-
 .grid-container img {
   width: 100%;
-  height: 400px;
-  flex-wrap: wrap;
+  height: auto;
 }
 .grid-container p {
   font-size: 1.5rem;
   font-weight: 300;
   text-transform: uppercase;
 }
-
+.glide__slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.glide__slide {
+  flex: 1 1 400px;
+  max-width: 400px;
+  text-align: center;
+}
 .glide__slide img {
   width: 100%;
   height: auto;
-  display: block;
-  box-shadow: rgb(96, 95, 95) 2px 2px 2px;
 }
 .glide__slide p {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
 }
+
 .feature-products {
   background-color: var(--light-grey);
   padding-top: 30px;
@@ -131,4 +130,70 @@ a {
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* .top-nav,
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav .left-link,
+  .top-nav .right-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav .left-link a,
+  .top-nav .right-link a {
+    margin: 5px 0;
+  }
+
+  .main-nav .nav-links ul {
+    flex-direction: column;
+  }
+
+  .main-nav .nav-links ul li {
+    margin: 5px 0;
+  } */
+  .banner {
+    height: 40vh;
+    
+  }
+  .banner-content{
+    top: 15%;
+  }
+
+  .banner-content p {
+    font-size: 18px;
+  }
+
+  .banner-content button {
+    font-size: 16px;
+    padding: 8px 16px;
+    left: auto;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glide__slide {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .glide__slides {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .glide__slide {
+    flex: 0 0 400px;
+    max-width: 100%;
+  }
 }
